@@ -1,4 +1,6 @@
 public class IterativeSolution {
+
+    // return the sum of all non-negative integers up to n
     public int tri(int n) {
         int result = 0;
         for (int i = 0; i <= n; i++) {
