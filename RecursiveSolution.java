@@ -4,7 +4,7 @@ public class RecursiveSolution {
     public int tri(int n) {
         // base case
         if (n <= 0) return 0;
-        
+        // add the previous number until 0
         return n + tri(n - 1);
     }
 
@@ -12,13 +12,27 @@ public class RecursiveSolution {
     public int fact(int n) {
         // base case
         if (n == 1) return 1;
-
+        // time the previous number until 1
         return n * fact(n - 1);
+    }
+
+    // fibonacci
+    public int fib(int n) {
+        // base case
+        if (n == 1) {
+            return 1;
+        }
+        else if (n == 0) {
+            return 0;
+        }
+        // sum the previous two number to get the nth place
+        return fib(n - 1) + fib(n - 2);
     }
 
     public static void main(String[] args) {
         RecursiveSolution ex = new RecursiveSolution();
         System.out.println(ex.tri(6));
         System.out.println(ex.fact(5));
+        System.out.println(ex.fib(3));
     }
 }
