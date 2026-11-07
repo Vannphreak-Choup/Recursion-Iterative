@@ -40,10 +40,20 @@ public class IterativeSolution {
         return current;
     }
 
+    // string reverser
+    public String reverseStr(String str) {
+        String result = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            result += str.charAt(i);
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         IterativeSolution ex = new IterativeSolution();
         System.out.println(ex.tri(6));
         System.out.println(ex.fact(5));
         System.out.println(ex.fib(5));
+        System.out.println(ex.reverseStr("apple"));
     }
 }

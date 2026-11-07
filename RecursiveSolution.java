@@ -29,10 +29,20 @@ public class RecursiveSolution {
         return fib(n - 1) + fib(n - 2);
     }
 
+    // string reverser
+    public String reverseStr(String str) {
+        // base case if string is empty
+        if (str.length() == 0) return "";
+        // keep adding the character of index 0 at the end
+        return reverseStr(str.substring(1)) + str.charAt(0);
+        
+    }
+
     public static void main(String[] args) {
         RecursiveSolution ex = new RecursiveSolution();
         System.out.println(ex.tri(6));
         System.out.println(ex.fact(5));
         System.out.println(ex.fib(3));
+        System.out.println(ex.reverseStr("apple"));
     }
 }
