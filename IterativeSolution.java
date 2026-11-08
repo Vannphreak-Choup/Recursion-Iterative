@@ -77,7 +77,7 @@ public class IterativeSolution {
     }
 
     // count the unique path
-    // O(m · m) or O(n^2)
+    // O(m * m) or O(n^2)
     public int countUniquePaths(int n, int m) {
     	// empty grid no path
     	if (n == 0 || m == 0) return 0;
