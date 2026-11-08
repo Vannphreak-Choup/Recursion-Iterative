@@ -59,6 +59,19 @@ public class RecursiveSolution {
     	return gcd(x2, x1 % x2);
     }
 
+    // count the unique path
+    public int countUniquePaths(int n, int m) {
+    	// base case empty grid no path and if single row or column, 1 way
+    	if (n == 0 || m == 0) {
+    		return 0;
+    	}
+    	else if (n == 1 || m == 1) {
+    		return 1;
+    	}
+    	// (n - 1, m) = cell above, (n, m - 1) = cell to the left
+    	return countUniquePaths(n - 1, m) + countUniquePaths(n, m - 1);
+    }
+
     public static void main(String[] args) {
         RecursiveSolution ex = new RecursiveSolution();
         System.out.println(ex.tri(6));
@@ -67,5 +80,6 @@ public class RecursiveSolution {
         System.out.println(ex.reverseStr("apple"));
         System.out.println(ex.hasChar("apple", 'c'));
         System.out.println(ex.gcd(18, 48));
+        System.out.println(ex.countUniquePaths(3, 3));
     }
 }

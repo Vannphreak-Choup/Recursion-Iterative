@@ -70,6 +70,31 @@ public class IterativeSolution {
         return x1;
     }
 
+    // count the unique path
+    public int countUniquePaths(int n, int m) {
+    	// empty grid no path
+    	if (n == 0 || m == 0) return 0;
+		// paths[i][j] = ways to reach this cell
+    	int[][] paths = new int[n][m];
+
+		// left column 1 way and top column 1 way
+    	for (int i = 0; i < n; i++) {
+    		paths[i][0] = 1;
+    	}
+    	for (int j = 0; j < m; j++) {
+    		paths[0][j] = 1;
+    	}
+
+    	for (int i = 1; i < n; i++) {
+    		for (int j = 1; j < m; j++) {
+    			// above + left
+    			paths[i][j] = paths[i - 1][j] + paths[i][j - 1];
+    		}
+    	}
+		// bottom right = total path
+    	return paths[n - 1][m - 1];
+    }
+
     public static void main(String[] args) {
         IterativeSolution ex = new IterativeSolution();
         System.out.println(ex.tri(6));
@@ -78,5 +103,6 @@ public class IterativeSolution {
         System.out.println(ex.reverseStr("apple"));
         System.out.println(ex.hasChar("", ' '));
         System.out.println(ex.gcd(18, 48));
+        System.out.println(ex.countUniquePaths(3, 3));
     }
 }
