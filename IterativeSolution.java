@@ -49,11 +49,22 @@ public class IterativeSolution {
         return result;
     }
 
+    // hasChar: take string and char return true if the char exist in the string else false
+    public boolean hasChar(String str, char c) {
+    	for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == c) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         IterativeSolution ex = new IterativeSolution();
         System.out.println(ex.tri(6));
         System.out.println(ex.fact(5));
         System.out.println(ex.fib(5));
         System.out.println(ex.reverseStr("apple"));
+        System.out.println(ex.hasChar("important", 'p'));
     }
 }

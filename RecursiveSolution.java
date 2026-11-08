@@ -38,11 +38,26 @@ public class RecursiveSolution {
         
     }
 
+    // hasChar: take a string and char and return true if the char exist in the string else false
+    public boolean hasChar(String str, char c) {
+    	// base case if the string is empty
+    	if (str.length() == 0) {
+    		return false;
+    	}
+    	// if the first character is the match
+    	else if (str.charAt(0) == c) {
+    		return true;
+    	}
+    	// keep checking the next character of the string
+    	return hasChar(str.substring(1), c);	
+    }
+
     public static void main(String[] args) {
         RecursiveSolution ex = new RecursiveSolution();
         System.out.println(ex.tri(6));
         System.out.println(ex.fact(5));
         System.out.println(ex.fib(3));
         System.out.println(ex.reverseStr("apple"));
+        System.out.println(ex.hasChar("apple", 'c'));
     }
 }
