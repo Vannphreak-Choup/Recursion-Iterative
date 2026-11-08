@@ -59,12 +59,24 @@ public class IterativeSolution {
         return false;
     }
 
+    // GCD: greatest common divisor
+    public int gcd(int x1, int x2) {
+        while (x2 != 0) {
+        	int temp = x2;
+        	x2 = x1 % x2;
+        	x1 = temp;
+        }
+        // return the last non-zero remainder
+        return x1;
+    }
+
     public static void main(String[] args) {
         IterativeSolution ex = new IterativeSolution();
         System.out.println(ex.tri(6));
         System.out.println(ex.fact(5));
         System.out.println(ex.fib(5));
         System.out.println(ex.reverseStr("apple"));
-        System.out.println(ex.hasChar("important", 'p'));
+        System.out.println(ex.hasChar("", ' '));
+        System.out.println(ex.gcd(18, 48));
     }
 }

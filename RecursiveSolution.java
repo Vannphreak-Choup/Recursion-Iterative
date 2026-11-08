@@ -52,6 +52,13 @@ public class RecursiveSolution {
     	return hasChar(str.substring(1), c);	
     }
 
+    // GCD: greatest common divisor
+    public int gcd(int x1, int x2) {
+    	// base case 
+    	if (x2 == 0) return x1;
+    	return gcd(x2, x1 % x2);
+    }
+
     public static void main(String[] args) {
         RecursiveSolution ex = new RecursiveSolution();
         System.out.println(ex.tri(6));
@@ -59,5 +66,6 @@ public class RecursiveSolution {
         System.out.println(ex.fib(3));
         System.out.println(ex.reverseStr("apple"));
         System.out.println(ex.hasChar("apple", 'c'));
+        System.out.println(ex.gcd(18, 48));
     }
 }
