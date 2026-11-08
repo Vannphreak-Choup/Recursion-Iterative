@@ -1,6 +1,7 @@
 public class IterativeSolution {
 
     // return the sum of all non-negative integers up to n
+    // O(n)
     public int tri(int n) {
         int result = 0;
         for (int i = 0; i <= n; i++) {
@@ -10,6 +11,7 @@ public class IterativeSolution {
     }
 
     // factorial
+    // O(n)
     public int fact(int n) {
         int result = 1;
         for (int i = 1; i <= n; i++) {
@@ -19,6 +21,7 @@ public class IterativeSolution {
     }
 
     // fibonacii
+    // O(n)
     public int fib(int n) {
         // check for 0 position
         if (n == 0) {
@@ -41,15 +44,17 @@ public class IterativeSolution {
     }
 
     // string reverser
+    // O(n)
     public String reverseStr(String str) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = str.length() - 1; i >= 0; i--) {
-            result += str.charAt(i);
+            result.append(str.charAt(i));
         }
-        return result;
+        return result.toString();
     }
 
     // hasChar: take string and char return true if the char exist in the string else false
+    // O(n)
     public boolean hasChar(String str, char c) {
     	for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == c) {
@@ -60,6 +65,7 @@ public class IterativeSolution {
     }
 
     // GCD: greatest common divisor
+	// O(logn)
     public int gcd(int x1, int x2) {
         while (x2 != 0) {
         	int temp = x2;
@@ -71,6 +77,7 @@ public class IterativeSolution {
     }
 
     // count the unique path
+    // O(m · m) or O(n^2)
     public int countUniquePaths(int n, int m) {
     	// empty grid no path
     	if (n == 0 || m == 0) return 0;
@@ -95,14 +102,4 @@ public class IterativeSolution {
     	return paths[n - 1][m - 1];
     }
 
-    public static void main(String[] args) {
-        IterativeSolution ex = new IterativeSolution();
-        System.out.println(ex.tri(6));
-        System.out.println(ex.fact(5));
-        System.out.println(ex.fib(5));
-        System.out.println(ex.reverseStr("apple"));
-        System.out.println(ex.hasChar("", ' '));
-        System.out.println(ex.gcd(18, 48));
-        System.out.println(ex.countUniquePaths(3, 3));
-    }
 }
